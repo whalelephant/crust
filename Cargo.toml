@@ -1,5 +1,6 @@
 [workspace]
 
 members = [
-    "str_split"
+    "str_split",
+    "decl_macro"
 ]

@@ -17,6 +17,7 @@ impl<'a, 'b> StrSplit<'a, 'b> {
     }
 }
 
+// here 'delimter is.. not an issue because it's not needed to be returned out of scope
 impl<'a> Iterator for StrSplit<'a, '_> {
     type Item = &'a str;
     fn next(&mut self) -> Option<Self::Item> {
