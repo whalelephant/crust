@@ -49,9 +49,12 @@ macro_rules! avec {
 #[macro_export]
 #[doc(hidden)]
 macro_rules! count {
+    // @COUNT just a pattern to match
     (@COUNT; $($ele: expr),*) => {
+        // this invokes the len method of a empty slide on a slice with ele type () - zero mem to get the length (or the #of ele)
         <[()]>::len(&[$($crate::count!(@SUBST; $ele: expr)),*])
     };
+    // sub whatever expr is into ()
     (@SUBST; $ele: expr) => {()};
 }
 
